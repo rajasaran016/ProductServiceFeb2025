@@ -1,17 +1,14 @@
-package com.firstapp.productservicefeb2025.Model;
-
+package com.firstapp.productservicefeb2025.DTO;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Product {
+public class CreateProductRequestDTO {
 
-    private Integer id;
     private String title;
     private String description;
     private String image;
-    private Category category;
-
+    private CategoryRequestDTO category;
 }
