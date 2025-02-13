@@ -23,7 +23,7 @@ public class ProductController {
     public Product getProductById(@PathVariable("id") Integer id) { //path variables to get params
 
         // setting the Validations
-        if(id == null) {
+        if(id == 100) {
             throw new IllegalArgumentException("id cannot be null");
         }
         // return the product response from FakeStoreProductService api
