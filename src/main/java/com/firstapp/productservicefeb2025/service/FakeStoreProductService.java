@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Service
-public class FakeStoreProductService {
+@Service("FakeStoreProductService")
+public class FakeStoreProductService implements ProductService {
 
     private final RestTemplate restTemplate; //creating object for rest API Which help us to make http call
 
@@ -22,7 +22,7 @@ public class FakeStoreProductService {
         this.restTemplate = restTemplate;
     }
 
-    private Product convertFakeStoreResponseToProduct(FakeStoreResponseDTO response) {
+    public Product convertFakeStoreResponseToProduct(FakeStoreResponseDTO response) {
 
         // Creating objects for the product and category class
         Product product = new Product();
@@ -38,7 +38,7 @@ public class FakeStoreProductService {
 
         return product;
     }
-
+    @Override
     public Product getProductById(Integer id) {
 
         Product product = new Product();
@@ -59,7 +59,7 @@ public class FakeStoreProductService {
         // return
         return product;
     }
-
+    @Override
     public List<Product> getAllProducts() {
         List<Product> response = new ArrayList<>();
 
@@ -77,7 +77,7 @@ public class FakeStoreProductService {
 
         return response;
     }
-
+    @Override
     public Product createProduct(String title, String description, String image, String catTitle) {
 
         Product response = new Product();

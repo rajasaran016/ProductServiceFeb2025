@@ -3,6 +3,8 @@ package com.firstapp.productservicefeb2025.controller;
 import com.firstapp.productservicefeb2025.DTO.CreateProductRequestDTO;
 import com.firstapp.productservicefeb2025.Model.Product;
 import com.firstapp.productservicefeb2025.service.FakeStoreProductService;
+import com.firstapp.productservicefeb2025.service.ProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +13,9 @@ import java.util.List;
 @RestController
 public class ProductController {
 
-    private final FakeStoreProductService service;
+    private final ProductService service;
 
-    public ProductController(FakeStoreProductService service) {
+    public ProductController(@Qualifier("SelfProductService") ProductService service) {
         this.service = service;
     }
 
