@@ -30,7 +30,7 @@ public class FakeStoreProductService {
 
         // mapping all the details
         category.setTitle(response.getCategory());
-        product.setId(response.getId());
+        //product.setId(response.getId());
         product.setCategory(category);
         product.setDescription(response.getDescription());
         product.setImage(response.getImageUrl());

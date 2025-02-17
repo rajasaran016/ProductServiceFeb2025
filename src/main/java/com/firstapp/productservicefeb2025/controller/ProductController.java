@@ -5,7 +5,6 @@ import com.firstapp.productservicefeb2025.Model.Product;
 import com.firstapp.productservicefeb2025.service.FakeStoreProductService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //RestController class for product
@@ -14,8 +13,8 @@ public class ProductController {
 
     private final FakeStoreProductService service;
 
-    public ProductController(FakeStoreProductService inputService) {
-        this.service = inputService;
+    public ProductController(FakeStoreProductService service) {
+        this.service = service;
     }
 
     //get product details by product Id
@@ -67,6 +66,5 @@ public class ProductController {
     //delete product from the database by Id
     @DeleteMapping("/product/{id}")
     public void deleteProductById(@PathVariable("id") Integer id){
-
     }
 }
